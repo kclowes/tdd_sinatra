@@ -5,6 +5,10 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
+  get '/item/new' do
+    erb :new_item
+  end
+
 
 
 end
