@@ -10,6 +10,9 @@ feature "Manage items" do
     visit("/")
 
     expect(page).to have_title("Our Awesome Homepage")
+    click_link("Create New Item")
+    
+
 
   end
 end
