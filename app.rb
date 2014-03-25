@@ -21,5 +21,8 @@ class MyApp < Sinatra::Base
     erb :items_list, :locals => {:items => NEW_ITEM}
   end
 
-
+  get '/items/:id' do
+    id = params[:id].to_i
+    erb :show, :locals => {:item => NEW_ITEM[id]}
+  end
 end

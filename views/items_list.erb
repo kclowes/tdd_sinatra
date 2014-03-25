@@ -2,11 +2,12 @@
 <html>
 <head>
   <title>Our List of Items</title>
+  <h1>Our list of Items</h1>
 </head>
 <body>
 
-<% items.each do |item| %>
-  <%= item %>
+<% items.each.with_index do | item, id | %>
+  <%= item %><a href="/items/<%= id %>">Show</a>
 <% end %>
 
 </body>
