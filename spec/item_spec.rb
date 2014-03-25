@@ -11,8 +11,11 @@ feature "Manage items" do
 
     expect(page).to have_title("Our Awesome Homepage")
     click_link("Create New Item")
-    fill_in("New Item", :with => "Chicken")
+    fill_in("new_item", :with => "Chicken")
     click_on("Submit")
+
+
+    expect(page).to have_content("Chicken")
 
   end
 end
