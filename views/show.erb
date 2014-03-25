@@ -6,7 +6,12 @@
 </head>
 <body>
 
-<%= item %>
+
+<% if item.nil? %>
+<% redirect '/items' %>
+  <% else %>
+  <%= item %> <a href="/items/<%= :id %>/edit">Update</a>
+  <% end %>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class MyApp < Sinatra::Base
+class MyApp < Sinatra::Application
 
   NEW_ITEM = []
 
@@ -24,5 +24,13 @@ class MyApp < Sinatra::Base
   get '/items/:id' do
     id = params[:id].to_i
     erb :show, :locals => {:item => NEW_ITEM[id]}
+  end
+
+  get '/items/:id/edit' do
+    erb :edit
+  end
+
+  post '/items' do
+    erb :items_list, :locals => {:items => NEW_ITEM}
   end
 end
