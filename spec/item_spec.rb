@@ -13,8 +13,6 @@ feature "Manage items" do
     click_link("Create New Item")
     fill_in("new_item", :with => "Chicken")
     click_on("Submit")
-
-
     expect(page).to have_content("Chicken")
 
   end

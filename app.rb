@@ -5,7 +5,7 @@ class MyApp < Sinatra::Base
   NEW_ITEM = []
 
   get '/' do
-    erb :index, :locals => {:items => NEW_ITEM}
+    erb :index
   end
 
   get '/item/new' do
@@ -14,9 +14,12 @@ class MyApp < Sinatra::Base
 
   post '/item/new' do
     NEW_ITEM << params[:new_item]
-   redirect '/'
+    redirect '/items'
   end
 
+  get '/items' do
+    erb :items_list, :locals => {:items => NEW_ITEM}
+  end
 
 
 end
